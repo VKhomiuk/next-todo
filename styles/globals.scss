@@ -1,0 +1,112 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+.app {
+  background-color: gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.wrapper {
+  width: 70%;
+  height: 80vh;
+  background-color: red;
+  overflow: hidden;
+  border-radius: 10px 10px 0 0;
+}
+
+.header {
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: darkgray;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.34);
+  padding: 10px 0;
+
+  table {
+    width: 90%;
+
+    td {
+      font-family: 'Droid Sans Mono';
+      font-size: 24px;
+      font-weight: 500;
+    }
+  }
+}
+
+.todo {
+  padding: 10px;
+  display: flex;
+  justify-content: start;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+
+  .todo__item {
+    width: 25%;
+    height: 20vh;
+    background-color: darkgray;
+    padding: 0 10px;
+  }
+
+  h1[data-is-edit=true] {
+    display: none;
+  }
+  input[type=text]{
+    display: none;
+    width: 100%;
+  }
+  input[type=text][data-is-edit=true]{
+    display: block;
+    width: 100%;
+  }
+  textarea[data-is-edit=false]{
+    display: none;
+  }
+  textarea[data-is-edit=true]{
+    display: block;
+    resize: none;
+
+  }
+  button[data-is-edit=false]{
+    display: none;
+  }
+  button[data-is-edit=true]{
+    display: block;
+  }
+  p[data-is-edit=true]{
+    display: none;
+  }
+  span[data-is-edit=false]{
+    display: none;
+  }
+  span[data-is-edit=true]{
+    display: block;
+    color: red;
+    font-size: 700;
+  }
+  .todo__item-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    input[type=checkbox][data-is-edit=true]{
+      display: none;
+    }
+    input[type=checkbox] {
+      width: 25px;
+      height: 25px;
+    }
+  }
+}
